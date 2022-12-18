@@ -1,4 +1,4 @@
-const BasePage = require('./BasePage')
+const BasePage = require('./BasePage');
 
 //login
 const USERNAME_TEXTBOX = { css: ':nth-child(2) > .oxd-input-group > :nth-child(2) > .oxd-input' };
@@ -27,101 +27,104 @@ const LOGOUT_BUTTON = { css: ':nth-child(4) > .oxd-userdropdown-link' };
 
 class LoginPage extends BasePage {
 	constructor(driver) {
-		super(driver)
+		super(driver);
+
 	}
 
 	async visitUrl() {
-		await this.goToUrl(URL)
+		await this.goToUrl(URL);
 
 	}
 
 	async login() {
-		await this.type(USERNAME_TEXTBOX, 'Admin')
-		await this.type(PASSWORD_TEXTBOX, 'admin123')
-		await this.clickOn(LOGIN_BUTTON)
+		await this.type(USERNAME_TEXTBOX, 'Admin');
+		await this.type(PASSWORD_TEXTBOX, 'admin123');
+		await this.clickOn(LOGIN_BUTTON);
 
 	}
 
 	async clickLogin() {
-		await this.clickOn(LOGIN_BUTTON)
+		await this.clickOn(LOGIN_BUTTON);
 
 	}
 
 	async enterUsername(text) {
-		await this.type(USERNAME_TEXTBOX, text)
+		await this.type(USERNAME_TEXTBOX, text);
 
 	}
 
 	async enterPassword(text) {
-		await this.type(PASSWORD_TEXTBOX, text)
+		await this.type(PASSWORD_TEXTBOX, text);
 
 	}
 
 	async checkInputErrorUsername() {
-		await this.assertTrueText(ERROR_USERNAME_INPUT, 'Required')
+		await this.assertTrueText(ERROR_USERNAME_INPUT, 'Required');
 
 	}
 
 	async checkInputErrorPassword() {
-		await this.assertTrueText(ERROR_PASSWORD_INPUT, 'Required')
+		await this.assertTrueText(ERROR_PASSWORD_INPUT, 'Required');
 
 	}
 
 	async checkValidLogin(title) {
-		await this.assertTrueText(PAGE_TITLE, 'Dashboard')
+		await this.assertTrueText(PAGE_TITLE, 'Dashboard');
 
 	}
 
 	async checkInvalidLoginError() {
-		await this.assertTrueText(ERROR_LOGIN, 'Invalid credentials')
+		await this.assertTrueText(ERROR_LOGIN, 'Invalid credentials');
 
 	}
 
 	async clickReset() {
-		await this.clickOn(RESET_BUTTON)
+		await this.clickOn(RESET_BUTTON);
 
 	}
 
 	async resetEnterUsername(username) {
-		await this.type(RESET_P_TEXTBOX, username)
+		await this.type(RESET_P_TEXTBOX, username);
 
 	}
 
 	async clickResetSubmit() {
-		await this.clickOn(RESET_BUTTON_SUBMIT)
+		await this.clickOn(RESET_BUTTON_SUBMIT);
 
 	}
 
 	async clickResetCancel() {
-		await this.clickOn(RESET_BUTTON_CANCEL)
+		await this.clickOn(RESET_BUTTON_CANCEL);
+
 	}
 
 	async checkResetInputError() {
-		await this.assertTrueText(RESET_ER_USERNAME_INPUT, 'Required')
+		await this.assertTrueText(RESET_ER_USERNAME_INPUT, 'Required');
 
 	}
 
 	async checkResetSuccessInfo() {
-		await this.assertTrueText(RESET_SUCCESS_INFO, 'Reset Password link sent successfully')
+		await this.assertTrueText(RESET_SUCCESS_INFO, 'Reset Password link sent successfully');
 
 	}
 
 	async checkReturnToLoginPage() {
-		await this.assertTrueText(LOGIN_PAGE_TITLE, 'Login')
+		await this.assertTrueText(LOGIN_PAGE_TITLE, 'Login');
 
 	}
 
 	//log out
 	async logout() {
-		await this.clickOn(PROFILE_DROPDOWN)
-		await this.clickOn(LOGOUT_BUTTON)
+		await this.clickOn(PROFILE_DROPDOWN);
+		await this.clickOn(LOGOUT_BUTTON);
+
 	}
 
 	async checkEmptyInputs() {
-		await this.assertTrueText(USERNAME_TEXTBOX, '')
-		await this.assertTrueText(PASSWORD_TEXTBOX, '')
-	}
+		await this.assertTrueText(USERNAME_TEXTBOX, '');
+		await this.assertTrueText(PASSWORD_TEXTBOX, '');
 
+	}
 
 }
 
