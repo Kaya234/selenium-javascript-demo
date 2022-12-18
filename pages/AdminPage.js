@@ -23,6 +23,7 @@ const SEARCH_STATUS_TEXT = { css: '.oxd-table-row > :nth-child(5) > div' };
 class AdminPage extends BasePage {
 	constructor(driver) {
 		super(driver);
+
 	}
 
 	async changePageToAdmin() {
