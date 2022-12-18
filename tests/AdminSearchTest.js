@@ -61,7 +61,7 @@ describe('Search Functionality Tests - Admin/User Management', function() {
 
 describe('User Role Dropdown', () => {
 
-		it('Test 1 - Select option (ESS)', async function(){
+		it.only('Test 1 - Select option (ESS)', async function(){
             await admin.selectOptionRole('ESS');
             await admin.clickSearch();
             await admin.checkSearchResultRole('ESS');
