@@ -1,5 +1,5 @@
 ﻿# SeleniumJS
-Collection of automated tests using the Selenium, Javascript and Page Object Model.
+Collection of automated tests using Selenium, Javascript and Page Object Model.
 <br><br>
 ## Tested sections:
 * Login page
